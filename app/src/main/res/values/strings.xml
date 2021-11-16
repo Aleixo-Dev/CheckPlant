@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CheckPlant</string>
+    <string name="splash_description_name">See the progress of your plants.</string>
 </resources>

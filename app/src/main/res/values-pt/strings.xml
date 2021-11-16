@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CheckPlant</string>
+    <string name="splash_description_name">Veja o progresso de suas plantas.</string>
+</resources>
