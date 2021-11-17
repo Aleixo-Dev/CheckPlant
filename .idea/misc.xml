@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/ic_arrow_back_24dp.xml" value="0.13125" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/ic_share_black_24dp.xml" value="0.13125" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/toolbar_background.xml" value="0.17685185185185184" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/activity_splash.xml" value="0.21" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/background_toolbar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/home_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/toolbar_curved.xml" value="0.12" />
       </map>
     </option>
   </component>
