@@ -1,4 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CheckPlant</string>
     <string name="splash_description_name">See the progress of your plants.</string>
+    <string name="not_plant">Oooops, you don\'t have plants yet.</string>
+    <string name="name_plant">Orquídea</string>
+    <string name="description_plant">Orquídeas são todas as plantas que compõem a família Orchidaceae</string>
 </resources>
