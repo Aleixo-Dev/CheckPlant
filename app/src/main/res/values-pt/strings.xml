@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">CheckPlant</string>
     <string name="splash_description_name">Veja o progresso de suas plantas.</string>
+    <string name="not_plant">Oooops, você ainda não possui plantas.</string>
+    <string name="name_plant">Orquídea</string>
+    <string name="description_plant">Orquídeas são todas as plantas que compõem a família Orchidaceae</string>
 </resources>
