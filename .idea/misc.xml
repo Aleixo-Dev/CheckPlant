@@ -4,18 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/background_custom_toast.xml" value="0.13680555555555557" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/background_plant_text.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/ic_add_black_24dp.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/ic_arrow_back_24dp.xml" value="0.13125" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/ic_share_black_24dp.xml" value="0.13125" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/toolbar_background.xml" value="0.17685185185185184" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/activity_splash.xml" value="0.21" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/add_plant_fragment.xml" value="0.18" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/background_toolbar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/custom_toast_layout.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/empty_plant.xml" value="0.14" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/home_fragment.xml" value="0.21" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/layout_items_plant.xml" value="0.25" />
-        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/toolbar_curved.xml" value="0.12" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/toolbar_curved.xml" value="0.2" />
       </map>
     </option>
   </component>
