@@ -27,7 +27,7 @@ class AdapterPlant(
 
             title.text = plant.name
             description.text = plant.description
-            day.text = plant.day
+            day.text = plant.month
 
             loadImagePlant(image, plant.image)
 
