@@ -9,5 +9,14 @@
         android:id="@+id/homeFragment"
         android:name="com.nicolas.checkplant.presentation.home.HomeFragment"
         android:label="home_fragment"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_addPlantFragment"
+            app:destination="@id/addPlantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlantFragment"
+        android:name="com.nicolas.checkplant.presentation.add_plant.AddPlantFragment"
+        android:label="add_plant_fragment"
+        tools:layout="@layout/add_plant_fragment" />
 </navigation>
