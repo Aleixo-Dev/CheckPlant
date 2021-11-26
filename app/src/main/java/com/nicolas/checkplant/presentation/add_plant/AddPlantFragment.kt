@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.nicolas.checkplant.R
+import com.nicolas.checkplant.common.showToast
 import com.nicolas.checkplant.databinding.AddPlantFragmentBinding
 import com.nicolas.checkplant.data.model.Plant
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,9 +19,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class AddPlantFragment : Fragment() {
 
+    private var uriImage: Uri? = null
+
     private val launcherImageFromGallery =
         registerForActivityResult(ActivityResultContracts.GetContent()) { galleryUri ->
             binding.apply {
+                uriImage = galleryUri
                 showUriIntoImageView(galleryUri)
             }
         }
@@ -49,7 +53,9 @@ class AddPlantFragment : Fragment() {
             getImageFromGallery()
         }
         buttonAddPlant.setOnClickListener {
-            addPlant()
+            if (validateInputTexts()) {
+                addPlant()
+            }
         }
     }
 
@@ -58,7 +64,7 @@ class AddPlantFragment : Fragment() {
             Plant(
                 name = inputPlantName.text.toString(),
                 description = inputDescriptionPlant.text.toString(),
-                image = addImgPlant.toString(),
+                image = uriImage.toString(),
                 month = inputMonth.text.toString(),
                 year = inputYear.text.toString(),
             )
