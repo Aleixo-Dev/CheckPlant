@@ -1,7 +1,7 @@
 package com.nicolas.checkplant.data.data_source.local
 
 import com.nicolas.checkplant.data.data_source.local.db.CheckPlantDao
-import com.nicolas.checkplant.domain.model.Plant
+import com.nicolas.checkplant.data.model.Plant
 import javax.inject.Inject
 
 class LocalDataSourceImpl @Inject constructor(

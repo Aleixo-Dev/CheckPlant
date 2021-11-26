@@ -1,6 +1,6 @@
 package com.nicolas.checkplant.domain.repository
 
-import com.nicolas.checkplant.domain.model.Plant
+import com.nicolas.checkplant.data.model.Plant
 import kotlinx.coroutines.flow.Flow
 
 interface CheckPlantRepository {

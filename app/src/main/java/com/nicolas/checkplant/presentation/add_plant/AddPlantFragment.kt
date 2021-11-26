@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.nicolas.checkplant.R
 import com.nicolas.checkplant.databinding.AddPlantFragmentBinding
-import com.nicolas.checkplant.domain.model.Plant
+import com.nicolas.checkplant.data.model.Plant
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,7 +42,6 @@ class AddPlantFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupToolbar()
         setupListeners()
-        validateInputTexts()
     }
 
     private fun setupListeners() = binding.apply {
@@ -55,17 +54,15 @@ class AddPlantFragment : Fragment() {
     }
 
     private fun addPlant() = binding.apply {
-        if (validateInputTexts()) {
-            viewModel.insertPlantIntoDatabase(
-                Plant(
-                    name = inputPlantName.text.toString(),
-                    description = inputDescriptionPlant.text.toString(),
-                    image = addImgPlant.toString(),
-                    month = inputMonth.text.toString(),
-                    year = inputYear.text.toString()
-                )
+        viewModel.insertPlantIntoDatabase(
+            Plant(
+                name = inputPlantName.text.toString(),
+                description = inputDescriptionPlant.text.toString(),
+                image = addImgPlant.toString(),
+                month = inputMonth.text.toString(),
+                year = inputYear.text.toString(),
             )
-        }
+        )
     }
 
     private fun validateInputTexts(): Boolean {

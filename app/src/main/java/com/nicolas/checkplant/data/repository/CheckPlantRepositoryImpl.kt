@@ -1,7 +1,7 @@
 package com.nicolas.checkplant.data.repository
 
 import com.nicolas.checkplant.data.data_source.local.LocalDataSource
-import com.nicolas.checkplant.domain.model.Plant
+import com.nicolas.checkplant.data.model.Plant
 import com.nicolas.checkplant.domain.repository.CheckPlantRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
