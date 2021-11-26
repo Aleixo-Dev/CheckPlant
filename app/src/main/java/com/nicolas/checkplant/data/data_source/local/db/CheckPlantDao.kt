@@ -1,7 +1,7 @@
 package com.nicolas.checkplant.data.data_source.local.db
 
 import androidx.room.*
-import com.nicolas.checkplant.domain.model.Plant
+import com.nicolas.checkplant.data.model.Plant
 import kotlinx.coroutines.flow.Flow
 
 @Dao

@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.nicolas.checkplant.R
 import androidx.navigation.fragment.findNavController
+import com.nicolas.checkplant.common.AdapterPlant
 import com.nicolas.checkplant.databinding.HomeFragmentBinding
+import com.nicolas.checkplant.data.model.Plant
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,7 +19,7 @@ class HomeFragment : Fragment() {
     private var _binding: HomeFragmentBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel : HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +32,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupListeners()
+        fetchPlantsOfDatabase()
+    }
+
+    private fun fetchPlantsOfDatabase() = binding.apply {
+        viewModel.plants.observe(viewLifecycleOwner) {
+           checkVisibilityPlants(it)
+        }
     }
 
     private fun setupListeners() = binding.apply {
@@ -40,13 +49,23 @@ class HomeFragment : Fragment() {
         }
     }
 
-    //Check if home list contain plants, else set visibility automatic.
-    // Check visibility, if contain plant set visibility Gone, else set visibility Visible.
-    private fun isPlantNotEmpty(isPlant: Boolean = false) = binding.apply {
-        if (isPlant) {
+    private fun initRecyclerListPlants(listPlants: List<Plant>) = binding.apply {
+        with(recyclerPlants) {
+            setHasFixedSize(true)
+            adapter = AdapterPlant(listPlants) {
+                /* Implement navigation to details plants.*/
+            }
+        }
+    }
+
+    private fun checkVisibilityPlants(plants: List<Plant>) = binding.apply {
+        if(plants.isNotEmpty()){
+            initRecyclerListPlants(plants)
             include.notPlantContainer.visibility = View.GONE
-        } else {
+            recyclerPlants.visibility = View.VISIBLE
+        }else{
             include.notPlantContainer.visibility = View.VISIBLE
+            recyclerPlants.visibility = View.GONE
         }
     }
 

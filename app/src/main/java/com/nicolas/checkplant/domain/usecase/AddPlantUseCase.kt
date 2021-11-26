@@ -1,6 +1,6 @@
 package com.nicolas.checkplant.domain.usecase
 
-import com.nicolas.checkplant.domain.model.Plant
+import com.nicolas.checkplant.data.model.Plant
 import com.nicolas.checkplant.domain.repository.CheckPlantRepository
 import javax.inject.Inject
 

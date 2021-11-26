@@ -2,7 +2,7 @@ package com.nicolas.checkplant.data.data_source.local.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.nicolas.checkplant.domain.model.Plant
+import com.nicolas.checkplant.data.model.Plant
 
 @Database(
     entities = [Plant::class],

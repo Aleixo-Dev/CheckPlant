@@ -6,7 +6,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nicolas.checkplant.databinding.LayoutItemsPlantBinding
-import com.nicolas.checkplant.domain.model.Plant
+import com.nicolas.checkplant.data.model.Plant
 
 class AdapterPlant(
     private val listPlants: List<Plant>,

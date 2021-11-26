@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nicolas.checkplant.R
-import com.nicolas.checkplant.domain.model.Plant
+import com.nicolas.checkplant.data.model.Plant
 import com.nicolas.checkplant.domain.usecase.AddPlantUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -31,7 +31,7 @@ class AddPlantViewModel @Inject constructor(
                 description = plant.description,
                 image = plant.image,
                 month = plant.month,
-                year = plant.year
+                year = plant.year,
             )
         )
     }
