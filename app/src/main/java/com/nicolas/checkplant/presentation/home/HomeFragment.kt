@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
 
     private fun fetchPlantsOfDatabase() = binding.apply {
         viewModel.plants.observe(viewLifecycleOwner) {
-           checkVisibilityPlants(it)
+            checkVisibilityPlants(it)
         }
     }
 
@@ -53,17 +53,17 @@ class HomeFragment : Fragment() {
         with(recyclerPlants) {
             setHasFixedSize(true)
             adapter = AdapterPlant(listPlants) {
-                /* Implement navigation to details plants.*/
+                findNavController().navigate(R.id.action_homeFragment_to_detailsFragment)
             }
         }
     }
 
     private fun checkVisibilityPlants(plants: List<Plant>) = binding.apply {
-        if(plants.isNotEmpty()){
+        if (plants.isNotEmpty()) {
             initRecyclerListPlants(plants)
             include.notPlantContainer.visibility = View.GONE
             recyclerPlants.visibility = View.VISIBLE
-        }else{
+        } else {
             include.notPlantContainer.visibility = View.VISIBLE
             recyclerPlants.visibility = View.GONE
         }

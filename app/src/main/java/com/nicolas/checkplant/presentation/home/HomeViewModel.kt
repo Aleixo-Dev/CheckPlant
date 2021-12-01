@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nicolas.checkplant.data.model.Plant
-import com.nicolas.checkplant.domain.usecase.GetPlantUseCase
+import com.nicolas.checkplant.domain.use_case.GetPlantUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

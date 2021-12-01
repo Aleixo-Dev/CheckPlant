@@ -6,4 +6,9 @@
     <string name="name_plant">Orquídea</string>
     <string name="description_plant">Orquídeas são todas as plantas que compõem a família Orchidaceae</string>
     <string name="add_plant">Add Plant</string>
+    <string name="empty_plant_progress">Oooops, you still don\'t have any plant progress.</string>
+
+    <!-- Toolbar -->
+    <string name="toolbar_details">Details</string>
+
 </resources>
