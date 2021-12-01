@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nicolas.checkplant.R
 import com.nicolas.checkplant.data.model.Plant
-import com.nicolas.checkplant.domain.usecase.AddPlantUseCase
+import com.nicolas.checkplant.domain.use_case.AddPlantUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
