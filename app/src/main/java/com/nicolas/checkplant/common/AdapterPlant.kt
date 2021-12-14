@@ -29,7 +29,7 @@ class AdapterPlant(
             description.text = plant.description
             day.text = plant.month
 
-            loadImagePlant(image, plant.image)
+            loadImagePlant(image, plant.backgroundImage)
 
             itemView.setOnClickListener {
                 clickPlant.invoke(plant)
