@@ -29,9 +29,9 @@ class AddPlantViewModel @Inject constructor(
             Plant(
                 name = plant.name,
                 description = plant.description,
-                image = plant.image,
+                backgroundImage = plant.backgroundImage,
                 month = plant.month,
-                year = plant.year,
+                day = plant.day,
             )
         )
     }

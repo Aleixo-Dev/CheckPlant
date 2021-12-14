@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21743589743589745" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable-v24/img_background_resource.xml" value="0.2" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/background_add_progress.xml" value="0.2169230769230769" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/background_button.xml" value="0.2203125" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/background_custom_toast.xml" value="0.13680555555555557" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/background_plant_text.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/ic_add_a_photo_black_24dp.xml" value="0.21743589743589745" />
@@ -14,17 +17,22 @@
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/ic_main_logo_application.xml" value="0.21743589743589745" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/ic_share_black_24dp.xml" value="0.13125" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/drawable/toolbar_background.xml" value="0.17685185185185184" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/a.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/activity_splash.xml" value="0.21" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/add_plant_fragment.xml" value="0.18" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/add_progress_fragment.xml" value="0.33" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/background_toolbar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/custom_toast_layout.xml" value="0.1361111111111111" />
-        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/details_fragment.xml" value="0.22" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/details_fragment.xml" value="0.21" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/empty_plant.xml" value="0.21" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/empty_plant_progress.xml" value="0.25" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/home_fragment.xml" value="0.21" />
-        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/layout_items_plant.xml" value="0.25" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/layout_items_plant.xml" value="0.33" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/layout_progress_plant.xml" value="0.22" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/motion_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/CheckPlant/app/src/main/res/layout/toolbar_curved.xml" value="0.2" />
+        <entry key="..\:/Users/nicol/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/btn_default.xml" value="0.2203125" />
       </map>
     </option>
   </component>
