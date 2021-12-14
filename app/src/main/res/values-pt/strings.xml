@@ -7,8 +7,13 @@
     <string name="description_plant">Orquídeas são todas as plantas que compõem a família Orchidaceae</string>
     <string name="add_plant">Adicionar Planta</string>
     <string name="empty_plant_progress">Oooops, você ainda não possui nenhum progresso de plantas.</string>
+    <string name="day_and_month">Dia e Mês</string>
+    <string name="add_plant_field_error">Campo obrigatório</string>
 
     <!-- Toolbar -->
     <string name="toolbar_details">Detalhes</string>
+
+    <!-- Button Text -->
+    <string name="add_button">Adicionar</string>
 
 </resources>
