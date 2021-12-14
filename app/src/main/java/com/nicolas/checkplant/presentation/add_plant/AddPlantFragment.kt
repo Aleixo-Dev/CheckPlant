@@ -1,9 +1,11 @@
 package com.nicolas.checkplant.presentation.add_plant
 
 import android.app.Dialog
+import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +21,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import android.view.Window
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.FileProvider
+import com.nicolas.checkplant.common.CustomTakePicture
+import java.io.File
+import java.util.jar.Manifest
 
 @AndroidEntryPoint
 class AddPlantFragment : Fragment() {
@@ -30,14 +36,26 @@ class AddPlantFragment : Fragment() {
         registerForActivityResult(ActivityResultContracts.GetContent()) { galleryUri ->
             binding.apply {
                 uriImage = galleryUri
-                showUriIntoImageView(galleryUri)
+                showUriIntoImageView(galleryUri.toString())
             }
         }
 
     private val launcherImageFromCamera =
-        registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { cameraBitmap ->
-            binding.apply {
-                bitmapImage = cameraBitmap
+        registerForActivityResult(CustomTakePicture()) {}
+
+    private val galleryPermission =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                launcherImageFromGallery.launch("image/*")
+                showUriIntoImageView(uriImage.toString())
+            }
+        }
+
+    private val cameraPermission =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                launcherImageFromCamera.launch(uriImage)
+                showUriIntoImageView(uriImage.toString())
             }
         }
 
@@ -117,11 +135,13 @@ class AddPlantFragment : Fragment() {
         }
     }
 
-    private fun showUriIntoImageView(uriImage: Uri) = binding.apply {
-        Glide.with(addImgPlant.context)
-            .load(uriImage)
-            .circleCrop()
-            .into(addImgPlant)
+    private fun showUriIntoImageView(uriImage: String) = binding.apply {
+        if(uriImage.isNotEmpty()){
+            Glide.with(addImgPlant.context)
+                .load(uriImage)
+                .circleCrop()
+                .into(addImgPlant)
+        }
     }
 
     private fun showDialog() {
@@ -134,14 +154,51 @@ class AddPlantFragment : Fragment() {
                 /**
                  * Open Camera.
                  */
+                openCamera()
             }
             findViewById<Button>(R.id.buttonGallery).setOnClickListener {
                 /**
                  * Open Gallery.
                  */
+                openGallery()
             }
             show()
         }
+    }
+
+    private fun openGallery() {
+        galleryPermission.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+    }
+
+    private fun openCamera() {
+        uriImage = activity?.let {
+            getRandomUri(it.applicationContext, ".jpg")
+        }
+        cameraPermission.launch(android.Manifest.permission.CAMERA)
+    }
+
+    private fun getRandomFilepath(
+        context: Context,
+        extension: String,
+        directory: String = Environment.DIRECTORY_PICTURES
+    ): String {
+        return "${context.getExternalFilesDir(directory)?.absolutePath}/${System.currentTimeMillis()}.$extension"
+    }
+
+    private fun getRandomUri(
+        context: Context,
+        extension: String,
+        directory: String = Environment.DIRECTORY_PICTURES
+    ): Uri {
+        return getUriFromPath(context, getRandomFilepath(context, extension, directory))
+    }
+
+    private fun getUriFromPath(context: Context, path: String): Uri {
+        return FileProvider.getUriForFile(
+            context,
+            getContext()?.packageName + ".fileprovider",
+            File(path)
+        )
     }
 
     override fun onDestroy() {
