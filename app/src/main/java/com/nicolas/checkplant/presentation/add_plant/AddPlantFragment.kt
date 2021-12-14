@@ -2,7 +2,6 @@ package com.nicolas.checkplant.presentation.add_plant
 
 import android.app.Dialog
 import android.content.Context
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -24,13 +23,11 @@ import android.widget.TextView
 import androidx.core.content.FileProvider
 import com.nicolas.checkplant.common.CustomTakePicture
 import java.io.File
-import java.util.jar.Manifest
 
 @AndroidEntryPoint
 class AddPlantFragment : Fragment() {
 
     private var uriImage: Uri? = null
-    private var bitmapImage: Bitmap? = null
 
     private val launcherImageFromGallery =
         registerForActivityResult(ActivityResultContracts.GetContent()) { galleryUri ->
@@ -82,7 +79,6 @@ class AddPlantFragment : Fragment() {
 
     private fun setupListeners() = binding.apply {
         addImgPlant.setOnClickListener {
-            //getImageFromGallery()
             showDialog()
         }
         buttonAddPlant.setOnClickListener {
@@ -119,10 +115,6 @@ class AddPlantFragment : Fragment() {
         return false
     }
 
-    private fun getImageFromGallery() = binding.apply {
-        launcherImageFromGallery.launch("image/*")
-    }
-
     private fun setupToolbar() = binding.apply {
         this.includeToolbar.apply {
             this.imgArrowBack.setOnClickListener {
@@ -151,15 +143,11 @@ class AddPlantFragment : Fragment() {
             setContentView(R.layout.custom_dialog)
             findViewById<TextView>(R.id.tvDialog).text = getString(R.string.dialog_text)
             findViewById<Button>(R.id.buttonCamera).setOnClickListener {
-                /**
-                 * Open Camera.
-                 */
+                dismiss()
                 openCamera()
             }
             findViewById<Button>(R.id.buttonGallery).setOnClickListener {
-                /**
-                 * Open Gallery.
-                 */
+                dismiss()
                 openGallery()
             }
             show()
