@@ -1,14 +1,15 @@
 package com.nicolas.checkplant.data.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
+import java.io.Serializable
 
 @Entity(tableName = "plants")
 data class Plant(
-    @PrimaryKey val id: Int? = null,
+    @PrimaryKey val plantId: Long? = null,
     val name: String,
     val description: String,
-    val image: String,
-    val month: String,
-    val year : String
-)
+    val backgroundImage: String,
+    val day: String,
+    val month: String
+) : Serializable
+
