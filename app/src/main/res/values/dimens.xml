@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    
+    <!-- Dialog -->
+    <dimen name="min_width_dialog">400dp</dimen>
+    <dimen name="min_height_dialog">130dp</dimen>
+    
+    
     <!-- Image SplashScreen -->
     <dimen name="logo_app_width">300dp</dimen>
     <dimen name="logo_app_height">100dp</dimen>

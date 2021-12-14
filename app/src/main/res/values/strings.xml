@@ -10,6 +10,7 @@
     <string name="day_and_month">Day and Month</string>
     <string name="add_plant_field_error">Mandatory field</string>
     <string name="plant_day">Day 11</string>
+    <string name="dialog_text">Which do you want to use?</string>
 
     <!-- Toolbar -->
     <string name="toolbar_details">Details</string>
