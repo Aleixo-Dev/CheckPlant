@@ -37,8 +37,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_container"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/image_add_width"
+        android:layout_height="@dimen/image_add_height"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -56,13 +56,13 @@
 
             <ImageView
                 android:id="@+id/add_img_plant"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:scaleType="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/ic_main_logo_application" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -132,11 +132,11 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_add_plant"
         android:layout_width="0dp"
-        android:backgroundTint="@color/light_green"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/light_green"
         android:text="@string/add_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
