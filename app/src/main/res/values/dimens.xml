@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Image SplashScreen -->
+    <dimen name="logo_app_width">300dp</dimen>
+    <dimen name="logo_app_height">100dp</dimen>
+
+    <!-- Margin default app -->
+    <dimen name="margin_top">16dp</dimen>
+    <dimen name="margin_start">16dp</dimen>
+    <dimen name="margin_end">16dp</dimen>
+    <dimen name="margin_bottom">16dp</dimen>
+
+    <!-- Image Plant -->
+    <dimen name="image_plant_width">70dp</dimen>
+    <dimen name="image_plant_height">70dp</dimen>
+</resources>

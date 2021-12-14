@@ -9,6 +9,7 @@
     <string name="empty_plant_progress">Oooops, you still don\'t have any plant progress.</string>
     <string name="day_and_month">Day and Month</string>
     <string name="add_plant_field_error">Mandatory field</string>
+    <string name="plant_day">Day 11</string>
 
     <!-- Toolbar -->
     <string name="toolbar_details">Details</string>

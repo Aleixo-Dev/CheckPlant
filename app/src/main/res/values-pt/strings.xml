@@ -9,7 +9,7 @@
     <string name="empty_plant_progress">Oooops, você ainda não possui nenhum progresso de plantas.</string>
     <string name="day_and_month">Dia e Mês</string>
     <string name="add_plant_field_error">Campo obrigatório</string>
-
+    <string name="plant_day">Day 11</string>
     <!-- Toolbar -->
     <string name="toolbar_details">Detalhes</string>
 
