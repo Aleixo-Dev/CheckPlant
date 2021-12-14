@@ -45,6 +45,8 @@ class AddPlantFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupToolbar()
         setupListeners()
+        binding.addImgPlant.setBackgroundResource(R.drawable.background_plant_text)
+        binding.addImgPlant.setImageResource(R.drawable.img_background_resource)
     }
 
     private fun setupListeners() = binding.apply {
