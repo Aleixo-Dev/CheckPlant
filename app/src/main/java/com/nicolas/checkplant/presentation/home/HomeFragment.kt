@@ -1,21 +1,17 @@
 package com.nicolas.checkplant.presentation.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import com.nicolas.checkplant.R
 import androidx.navigation.fragment.findNavController
 import com.nicolas.checkplant.common.AdapterPlant
-import com.nicolas.checkplant.common.showToast
 import com.nicolas.checkplant.databinding.HomeFragmentBinding
 import com.nicolas.checkplant.data.model.Plant
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
