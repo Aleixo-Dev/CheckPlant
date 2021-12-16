@@ -7,17 +7,33 @@
     android:padding="16dp"
     tools:context=".presentation.add_progress.AddProgressFragment">
 
-    <ImageView
-        android:id="@+id/img_progress"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:scaleType="center"
-        android:src="@drawable/background_plant_text"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_progress"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:scaleType="center"
+                android:src="@drawable/background_plant_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <EditText
         android:id="@+id/input_progress_month"
@@ -33,7 +49,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#80FFFFFF"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/img_progress"
+        app:layout_constraintEnd_toEndOf="@+id/card_container"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -52,7 +68,7 @@
         android:textColorHint="#80FFFFFF"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/img_progress"
+        app:layout_constraintStart_toStartOf="@+id/card_container"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
@@ -64,9 +80,9 @@
         android:text="@string/day_and_month"
         android:textColor="@color/green"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/img_progress"
-        app:layout_constraintStart_toStartOf="@+id/img_progress"
-        app:layout_constraintTop_toBottomOf="@+id/img_progress" />
+        app:layout_constraintEnd_toEndOf="@+id/card_container"
+        app:layout_constraintStart_toStartOf="@+id/card_container"
+        app:layout_constraintTop_toBottomOf="@+id/card_container" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
