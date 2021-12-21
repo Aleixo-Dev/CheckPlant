@@ -101,7 +101,11 @@ class AddProgressFragment : BottomSheetDialogFragment() {
         extension: String,
         directory: String = Environment.DIRECTORY_PICTURES
     ): String {
-        return "${context.getExternalFilesDir(directory)?.absolutePath}/${System.currentTimeMillis()}.$extension"
+        return "${
+            context.getExternalFilesDir(directory)?.absolutePath
+        }/${
+            System.currentTimeMillis()
+        }.$extension"
     }
 
     private fun getRandomUri(
