@@ -1,18 +1,14 @@
 package com.nicolas.checkplant.presentation.details
 
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
 import com.nicolas.checkplant.R
 import com.nicolas.checkplant.common.AdapterProgressPlant
 import com.nicolas.checkplant.data.model.ImagePlant
@@ -27,15 +23,9 @@ class DetailsFragment : Fragment() {
 
     private val viewModel: DetailsViewModel by viewModels()
 
-    private var backgroundUri: Uri? = null
     private val arguments: DetailsFragmentArgs by navArgs()
 
-    private val getContentBackground =
-        registerForActivityResult(ActivityResultContracts.GetContent()) {
-            backgroundUri = it
-            showUriIntoImageView(it)
-            isImage(it)
-        }
+    private var isImageBackground = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,23 +40,27 @@ class DetailsFragment : Fragment() {
         setupToolbar()
         setupListeners()
         fetchImageFromDatabase()
+        setImageIntoBackground()
+        checkImageBackground()
     }
 
+    private fun checkImageBackground() = binding.apply {
+        if (isImageBackground) {
+            imgAdd.visibility = View.GONE
+        }
+    }
+
+    private fun setImageIntoBackground() = binding.apply {
+        arguments.run {
+            imgBackgroundPlant.setImageURI(plant.backgroundImage.toUri())
+        }
+        isImageBackground = true
+    }
 
     private fun fetchImageFromDatabase() = binding.apply {
         viewModel.getImagesPlant(arguments.plant.plantId!!.toInt())
         viewModel.imagesPlant.observe(viewLifecycleOwner) {
             initRecyclerView(it)
-        }
-    }
-
-    private fun isImage(imageUri: Uri) = binding.apply {
-        if (imageUri.toString().isNotEmpty()) {
-            imgBackgroundPlant.visibility = View.VISIBLE
-            imgAdd.visibility = View.GONE
-        } else {
-            imgBackgroundPlant.visibility = View.GONE
-            imgAdd.visibility = View.VISIBLE
         }
     }
 
@@ -78,9 +72,6 @@ class DetailsFragment : Fragment() {
     }
 
     private fun setupListeners() = binding.apply {
-        imgBackgroundPlant.setOnClickListener {
-            fetchImageFromGallery()
-        }
         fabProgress.setOnClickListener {
             val directions =
                 DetailsFragmentDirections.actionDetailsFragmentToAddProgressFragment(arguments.plant)
@@ -95,24 +86,6 @@ class DetailsFragment : Fragment() {
                 findNavController().popBackStack()
             }
         }
-    }
-
-    private fun fetchImageFromGallery() = binding.apply {
-        getContentBackground.launch("image/*")
-    }
-
-    private fun showUriIntoImageView(uriImage: Uri) = binding.apply {
-
-        val options: RequestOptions = RequestOptions()
-            .centerInside()
-            .placeholder(R.drawable.ic_main_logo_application)
-            .error(R.drawable.ic_main_logo_application)
-        Glide.with(imgBackgroundPlant.context)
-            .load(uriImage)
-            .diskCacheStrategy(DiskCacheStrategy.DATA)
-            .apply(options)
-            .dontAnimate()
-            .into(imgBackgroundPlant)
     }
 
     override fun onDestroy() {
