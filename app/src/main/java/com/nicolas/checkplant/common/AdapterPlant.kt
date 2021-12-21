@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.nicolas.checkplant.databinding.LayoutItemsPlantBinding
 import com.nicolas.checkplant.data.model.Plant
 
@@ -41,6 +42,7 @@ class AdapterPlant(
                 Glide.with(imageView.context)
                     .load(uriImage)
                     .centerCrop()
+                    .diskCacheStrategy(DiskCacheStrategy.DATA)
                     .into(imageView)
             }
         }
