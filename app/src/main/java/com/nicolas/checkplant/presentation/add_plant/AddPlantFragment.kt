@@ -84,6 +84,7 @@ class AddPlantFragment : Fragment() {
         buttonAddPlant.setOnClickListener {
             if (validateInputTexts()) {
                 addPlant()
+                findNavController().navigate(R.id.action_addPlantFragment_to_homeFragment)
             }
         }
     }
@@ -128,7 +129,7 @@ class AddPlantFragment : Fragment() {
     }
 
     private fun showUriIntoImageView(uriImage: String) = binding.apply {
-        if(uriImage.isNotEmpty()){
+        if (uriImage.isNotEmpty()) {
             Glide.with(addImgPlant.context)
                 .load(uriImage)
                 .circleCrop()
