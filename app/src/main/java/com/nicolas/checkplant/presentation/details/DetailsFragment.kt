@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -17,6 +18,7 @@ import android.view.Window
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
@@ -82,6 +84,7 @@ class DetailsFragment : Fragment() {
         setupToolbar(arguments.plant.name)
         setupListeners()
         fetchImageFromDatabase()
+        changeColorToolbar(ContextCompat.getColor(requireContext(), R.color.light_green))
     }
 
     private fun fetchImageFromDatabase() = binding.apply {
@@ -89,6 +92,11 @@ class DetailsFragment : Fragment() {
         viewModel.imagesPlant.observe(viewLifecycleOwner) {
             initRecyclerView(it)
         }
+    }
+
+    private fun changeColorToolbar(color: Int) {
+        val window: Window = requireActivity().window
+        window.statusBarColor = color
     }
 
     private fun initRecyclerView(imagePlant: List<ImagePlant>) = binding.apply {

@@ -1,5 +1,6 @@
 package com.nicolas.checkplant.common
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -22,13 +23,14 @@ class AdapterPlant(
         private val title = binding.tvNamePlant
         private val description = binding.tvDescriptionPlant
         private val image = binding.imgPlant
-        private val day = binding.tvDayPlant
+        private val dayAndMont = binding.tvDayPlant
 
+        @SuppressLint("SetTextI18n")
         fun bind(plant: Plant) {
 
             title.text = plant.name
             description.text = plant.description
-            day.text = plant.month
+            dayAndMont.text = "${plant.day}/${plant.month}"
 
             loadImagePlant(image, plant.backgroundImage)
 

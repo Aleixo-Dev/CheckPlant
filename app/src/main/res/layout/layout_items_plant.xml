@@ -72,4 +72,5 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvNamePlant" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
