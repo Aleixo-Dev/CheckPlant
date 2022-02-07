@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.nicolas.checkplant.R
 import androidx.navigation.fragment.findNavController
@@ -33,7 +35,14 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupListeners()
         fetchPlantsOfDatabase()
+        changeColorToolbar(ContextCompat.getColor(requireContext(), R.color.green))
     }
+
+    private fun changeColorToolbar(color: Int) {
+        val window: Window = requireActivity().window
+        window.statusBarColor = color
+    }
+
 
     private fun fetchPlantsOfDatabase() = binding.apply {
         viewModel.plants.observe(viewLifecycleOwner) {
