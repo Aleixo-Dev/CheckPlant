@@ -21,7 +21,11 @@
         android:id="@+id/addPlantFragment"
         android:name="com.nicolas.checkplant.presentation.add_plant.AddPlantFragment"
         android:label="add_plant_fragment"
-        tools:layout="@layout/add_plant_fragment" />
+        tools:layout="@layout/add_plant_fragment" >
+        <action
+            android:id="@+id/action_addPlantFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.nicolas.checkplant.presentation.details.DetailsFragment"
