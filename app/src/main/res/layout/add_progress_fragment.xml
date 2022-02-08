@@ -70,8 +70,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputProgressDay"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
@@ -80,15 +80,16 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Day"
+            android:hint="@string/day_label_input"
+            android:inputType="date"
             android:textColorHint="@color/green" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputProgressMonth"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
@@ -97,7 +98,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Month"
+            android:hint="@string/month_label_input"
+            android:inputType="date"
             android:textColorHint="@color/green" />
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -18,4 +18,8 @@
     <!-- Button Text -->
     <string name="add_button">Add</string>
 
+    <!-- InputText -->
+    <string name="day_label_input">Day</string>
+    <string name="month_label_input">Month</string>
+
 </resources>

@@ -17,4 +17,8 @@
     <!-- Button Text -->
     <string name="add_button">Adicionar</string>
 
+    <!-- InputText -->
+    <string name="day_label_input">Dia</string>
+    <string name="month_label_input">Mês</string>
+
 </resources>
