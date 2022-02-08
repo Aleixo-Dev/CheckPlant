@@ -1,5 +1,6 @@
 package com.nicolas.checkplant.common
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -17,9 +18,12 @@ class AdapterProgressPlant(
         RecyclerView.ViewHolder(binding.root) {
 
         private val image = binding.imgProgressPlant
+        private val progressDayMont = binding.progressDayMonth
 
+        @SuppressLint("SetTextI18n")
         fun bind(imagePlant: ImagePlant) {
             loadImagePlant(image, imagePlant.imageUri)
+            progressDayMont.text = "${imagePlant.day}/${imagePlant.month}"
         }
 
         private fun loadImagePlant(imageView: ImageView, uriImage: String) {
