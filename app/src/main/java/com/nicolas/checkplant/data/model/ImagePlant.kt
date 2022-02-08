@@ -7,5 +7,7 @@ import androidx.room.PrimaryKey
 data class ImagePlant(
     @PrimaryKey(autoGenerate = true) val imageId: Long? = null,
     val imageUri: String,
-    val imagePlantId: Long
+    val imagePlantId: Long,
+    val day : String,
+    val month : String
 )

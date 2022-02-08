@@ -44,7 +44,9 @@ class AddProgressViewModel @Inject constructor(
         addImageUseCase.invoke(
             ImagePlant(
                 imageUri = imagePlant.imageUri,
-                imagePlantId = imagePlant.imagePlantId
+                imagePlantId = imagePlant.imagePlantId,
+                day = imagePlant.day,
+                month = imagePlant.month
             )
         )
     }
@@ -63,7 +65,14 @@ class AddProgressViewModel @Inject constructor(
 
         if (isFormValid) {
             try {
-
+                addImageUseCase.invoke(
+                    ImagePlant(
+                        imageUri = imageUri.toString(),
+                        imagePlantId = plantId,
+                        day = day,
+                        month = month
+                    )
+                )
             } catch (exception: Exception) {
 
             }

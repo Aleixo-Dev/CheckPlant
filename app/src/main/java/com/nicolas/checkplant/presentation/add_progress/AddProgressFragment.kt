@@ -22,6 +22,7 @@ import android.widget.TextView
 import androidx.core.content.FileProvider
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.google.android.material.textfield.TextInputLayout
 import com.nicolas.checkplant.common.CustomTakePicture
 import com.nicolas.checkplant.data.model.ImagePlant
 import java.io.File
@@ -77,6 +78,7 @@ class AddProgressFragment : BottomSheetDialogFragment() {
         setupListeners()
         binding.imgProgress.setBackgroundResource(R.drawable.background_plant_text)
         binding.imgProgress.setImageResource(R.drawable.img_background_resource)
+        observeViewModelEvents()
     }
 
     private fun setupListeners() = binding.apply {
@@ -85,13 +87,13 @@ class AddProgressFragment : BottomSheetDialogFragment() {
         }
 
         buttonAddProgress.setOnClickListener {
-            val day = inputProgressDay.text.toString()
-            val month = inputProgressMonth.text.toString()
-            viewModel.addImage(
-                ImagePlant(
-                    imageUri = imageUri.toString(),
-                    imagePlantId = arguments.plant.plantId!!.toLong()
-                )
+            val day = inputProgressDay.editText?.text.toString()
+            val month = inputProgressMonth.editText?.text.toString()
+            viewModel.createProgressPlant(
+                imageUri = imageUri,
+                plantId = arguments.plant.plantId!!.toLong(),
+                day = day,
+                month = month
             )
         }
     }
@@ -162,7 +164,6 @@ class AddProgressFragment : BottomSheetDialogFragment() {
         }
     }
 
-    /* Change input text from editText for editTextLayout. */
     private fun observeViewModelEvents() {
         viewModel.run {
             imageUriErrorResId.observe(viewLifecycleOwner) { drawableResId ->
@@ -170,12 +171,18 @@ class AddProgressFragment : BottomSheetDialogFragment() {
                 binding.imgProgress.setImageResource(drawableResId)
             }
             dayFieldErrorResId.observe(viewLifecycleOwner) { dayResId ->
-                binding.inputProgressDay.error = dayResId.toString()
+                binding.inputProgressDay.setError(dayResId)
             }
             monthFieldErrorResId.observe(viewLifecycleOwner) { monthResId ->
-                binding.inputProgressMonth.error = monthResId.toString()
+                binding.inputProgressMonth.setError(monthResId)
             }
         }
+    }
+
+    private fun TextInputLayout.setError(stringResId: Int?) {
+        error = if (stringResId != null) {
+            getString(stringResId)
+        } else null
     }
 
     override fun onDestroy() {
