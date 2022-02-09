@@ -92,10 +92,10 @@ class AddPlantFragment : Fragment() {
     private fun addPlant() = binding.apply {
         viewModel.insertPlantIntoDatabase(
             Plant(
-                name = inputPlantName.text.toString(),
+                name = textInputPlantName.editText?.text.toString(),
                 description = inputDescriptionPlant.text.toString(),
-                month = inputMonth.text.toString(),
-                day = inputYear.text.toString(),
+                month = inputMonthAdd.editText?.text.toString(),
+                day = inputDayAdd.editText?.text.toString(),
                 backgroundImage = uriImage.toString()
             )
         )
@@ -103,10 +103,9 @@ class AddPlantFragment : Fragment() {
 
     private fun validateInputTexts(): Boolean {
         binding.apply {
-            if (inputPlantName.text.isNullOrEmpty().not()) {
+            if (textInputPlantName.editText?.text!!.isNotEmpty()) {
                 if (inputDescriptionPlant.text.isNullOrEmpty().not()) {
-                    if (inputMonth.text.isNullOrEmpty().not() && inputYear.text.isNullOrEmpty()
-                            .not()
+                    if (inputDayAdd.editText?.text!!.isNotEmpty() && inputMonthAdd.editText?.text!!.isNotEmpty()
                     ) {
                         return true
                     }
