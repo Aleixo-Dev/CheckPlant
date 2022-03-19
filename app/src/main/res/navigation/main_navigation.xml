@@ -12,18 +12,10 @@
         tools:layout="@layout/home_fragment">
         <action
             android:id="@+id/action_homeFragment_to_addPlantFragment"
-            app:destination="@id/addPlantFragment"
-            app:enterAnim="@anim/nav_enter_anim"
-            app:exitAnim="@anim/nav_exit_anim"
-            app:popEnterAnim="@anim/nav_pop_enter_anim"
-            app:popExitAnim="@anim/nav_pop_exit_anim" />
+            app:destination="@id/addPlantFragment" />
         <action
             android:id="@+id/action_homeFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/slide_out" />
+            app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addPlantFragment"
