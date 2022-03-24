@@ -28,7 +28,7 @@ class CheckPlantRepositoryImpl @Inject constructor(
         return localDataSource.getAllImages()
     }
 
-    override fun getImagesFromProgress(id : Int) = localDataSource.getImagesFromProgress(id)
+    override fun getImagesFromProgress(id: Int) = localDataSource.getImagesFromProgress(id)
 
     override suspend fun insertImage(imagePlant: ImagePlant) {
         localDataSource.insertImage(imagePlant)
@@ -44,5 +44,9 @@ class CheckPlantRepositoryImpl @Inject constructor(
 
     override suspend fun deletePlant(plant: Plant) {
         localDataSource.deletePlant(plant)
+    }
+
+    override suspend fun deleteImagePlant(imagePlant: ImagePlant) {
+        localDataSource.deleteImagePlant(imagePlant)
     }
 }

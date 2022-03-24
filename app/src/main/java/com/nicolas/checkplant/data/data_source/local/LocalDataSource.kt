@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface LocalDataSource {
 
-
     suspend fun insertPlantName(plantName: PlantName)
 
     fun getAllPlantName() : Flow<List<PlantName>>
@@ -25,5 +24,7 @@ interface LocalDataSource {
     suspend fun insertPlant(plant: Plant)
 
     suspend fun deletePlant(plant: Plant)
+
+    suspend fun deleteImagePlant(imagePlant: ImagePlant)
 
 }

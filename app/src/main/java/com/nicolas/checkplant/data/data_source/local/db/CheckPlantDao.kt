@@ -37,4 +37,7 @@ interface CheckPlantDao {
     @Delete
     fun deletePlant(plant: Plant)
 
+    @Delete
+    fun deleteImagePlant(imagePlant: ImagePlant)
+
 }

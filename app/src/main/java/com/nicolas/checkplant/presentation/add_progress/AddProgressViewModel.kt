@@ -69,7 +69,7 @@ class AddProgressViewModel @Inject constructor(
                     ImagePlant(
                         imageUri = imageUri.toString(),
                         imagePlantId = plantId,
-                        day = day,
+                        day = day.toInt(),
                         month = month
                     )
                 )
