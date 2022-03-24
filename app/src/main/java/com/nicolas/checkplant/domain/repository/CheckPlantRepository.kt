@@ -24,4 +24,6 @@ interface CheckPlantRepository {
 
     suspend fun deletePlant(plant: Plant)
 
+    suspend fun deleteImagePlant(imagePlant: ImagePlant)
+
 }

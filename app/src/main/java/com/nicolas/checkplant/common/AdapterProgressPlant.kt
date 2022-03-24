@@ -11,11 +11,14 @@ import com.nicolas.checkplant.data.model.ImagePlant
 import com.nicolas.checkplant.databinding.LayoutProgressPlantBinding
 
 class AdapterProgressPlant(
-    private val imagePlantList: List<ImagePlant>
+    private val imagePlantList: List<ImagePlant>,
+    private val clickImagePlant: ((imagePlant: ImagePlant) -> Unit)
 ) : RecyclerView.Adapter<AdapterProgressPlant.MainViewHolder>() {
 
-    class MainViewHolder(binding: LayoutProgressPlantBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class MainViewHolder(
+        binding: LayoutProgressPlantBinding,
+        private val clickImagePlant: ((imagePlant: ImagePlant) -> Unit)
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         private val image = binding.imgProgressPlant
         private val progressDayMont = binding.progressDayMonth
@@ -24,6 +27,10 @@ class AdapterProgressPlant(
         fun bind(imagePlant: ImagePlant) {
             loadImagePlant(image, imagePlant.imageUri)
             progressDayMont.text = "${imagePlant.day}/${imagePlant.month}"
+
+            itemView.setOnClickListener {
+                clickImagePlant.invoke(imagePlant)
+            }
         }
 
         private fun loadImagePlant(imageView: ImageView, uriImage: String) {
@@ -43,7 +50,7 @@ class AdapterProgressPlant(
             parent,
             false
         )
-        return MainViewHolder(layout)
+        return MainViewHolder(layout, clickImagePlant)
     }
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {

@@ -8,6 +8,6 @@ data class ImagePlant(
     @PrimaryKey(autoGenerate = true) val imageId: Long? = null,
     val imageUri: String,
     val imagePlantId: Long,
-    val day : String,
+    val day : Int,
     val month : String
 )

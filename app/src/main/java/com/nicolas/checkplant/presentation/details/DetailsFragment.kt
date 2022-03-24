@@ -3,14 +3,9 @@ package com.nicolas.checkplant.presentation.details
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,12 +15,10 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.core.net.toUri
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.nicolas.checkplant.R
 import com.nicolas.checkplant.common.AdapterProgressPlant
 import com.nicolas.checkplant.common.CustomTakePicture
@@ -102,7 +95,15 @@ class DetailsFragment : Fragment() {
     private fun initRecyclerView(imagePlant: List<ImagePlant>) = binding.apply {
         with(rvImages) {
             setHasFixedSize(true)
-            adapter = AdapterProgressPlant(imagePlant)
+            /*  @sortedBy: 'classificar por': -> image plant day, do menor para o maior dia */
+            val sortedPlantDay = imagePlant.sortedBy {
+                it.day
+                it.month
+            }
+            adapter = AdapterProgressPlant(sortedPlantDay) {
+                // delete this is plant
+                viewModel.deleteThisImagePlant(it)
+            }
         }
     }
 

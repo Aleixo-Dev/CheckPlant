@@ -23,7 +23,7 @@ class LocalDataSourceImpl @Inject constructor(
 
     override fun getAllImages() = checkPlantDao.getAllImages()
 
-    override fun getImagesFromProgress(id : Int) = checkPlantDao.getImagesFromProgress(id)
+    override fun getImagesFromProgress(id: Int) = checkPlantDao.getImagesFromProgress(id)
 
     override suspend fun insertImage(imagePlant: ImagePlant) {
         checkPlantDao.insertImage(imagePlant)
@@ -38,5 +38,9 @@ class LocalDataSourceImpl @Inject constructor(
 
     override suspend fun deletePlant(plant: Plant) {
         checkPlantDao.deletePlant(plant)
+    }
+
+    override suspend fun deleteImagePlant(imagePlant: ImagePlant) {
+        checkPlantDao.deleteImagePlant(imagePlant)
     }
 }
