@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nicolas.checkplant.R
 import com.nicolas.checkplant.data.model.ImagePlant
-import com.nicolas.checkplant.data.model.Plant
 import com.nicolas.checkplant.data.model.PlantName
 import com.nicolas.checkplant.domain.use_case.AddImageUseCase
 import com.nicolas.checkplant.domain.use_case.PlantNameUseCase

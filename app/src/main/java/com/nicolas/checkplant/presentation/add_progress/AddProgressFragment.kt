@@ -24,7 +24,6 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.google.android.material.textfield.TextInputLayout
 import com.nicolas.checkplant.common.CustomTakePicture
-import com.nicolas.checkplant.data.model.ImagePlant
 import java.io.File
 
 @AndroidEntryPoint
